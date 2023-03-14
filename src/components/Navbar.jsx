@@ -9,11 +9,12 @@ function AppNavbar() {
 				<Container>
 					<Navbar.Brand href="#home">Navbar</Navbar.Brand>
 					<Nav className="me-auto">
-						<Nav.Link>Home</Nav.Link>
 						<Nav.Link>
-							<Link to="">Add Product</Link>
+							<Link to="/">Home</Link>
 						</Nav.Link>
-						<Nav.Link>Pricing</Nav.Link>
+						<Nav.Link>
+							<Link to="/add">Add Product</Link>
+						</Nav.Link>
 					</Nav>
 				</Container>
 			</Navbar>
