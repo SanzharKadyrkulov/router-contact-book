@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function AddProductPage() {
+function AddProductPage({ addContact }) {
 	const [contact, setContact] = useState({
 		name: "",
 		surname: "",
@@ -17,7 +17,23 @@ function AddProductPage() {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		console.log(contact);
+		if (
+			!contact.name.trim() ||
+			!contact.surname.trim() ||
+			!contact.phoneNumber.trim()
+		) {
+			alert("Fill the fields");
+			return;
+		}
+		addContact({
+			...contact,
+			id: Date.now(),
+		});
+		setContact({
+			name: "",
+			surname: "",
+			phoneNumber: "",
+		});
 	}
 
 	return (

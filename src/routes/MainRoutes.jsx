@@ -4,12 +4,15 @@ import MainLayout from "../layout/MainLayout";
 import HomePage from "../pages/HomePage";
 import AddProductPage from "../pages/AddProductPage";
 
-function MainRoutes() {
+function MainRoutes({ addContact, contacts }) {
 	return (
 		<Routes>
 			<Route element={<MainLayout />}>
-				<Route path="/" element={<HomePage />} />
-				<Route path="/add" element={<AddProductPage />} />
+				<Route path="/" element={<HomePage contacts={contacts} />} />
+				<Route
+					path="/add"
+					element={<AddProductPage addContact={addContact} />}
+				/>
 			</Route>
 		</Routes>
 	);
