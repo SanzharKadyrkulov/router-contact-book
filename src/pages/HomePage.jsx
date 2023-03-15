@@ -1,7 +1,10 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-function HomePage({ contacts }) {
+function HomePage({ contacts, deleteContact }) {
+	const navigate = useNavigate();
+
 	return (
 		<div>
 			{contacts.map((item) => {
@@ -12,8 +15,14 @@ function HomePage({ contacts }) {
 							<Card.Subtitle className="mb-2 text-muted">
 								{item.phoneNumber}
 							</Card.Subtitle>
-							<Button variant="danger">Delete</Button>
-							<Button className="mx-2" variant="warning">
+							<Button onClick={() => deleteContact(item.id)} variant="danger">
+								Delete
+							</Button>
+							<Button
+								onClick={() => navigate(`/edit/${item.id}`)}
+								className="mx-2"
+								variant="warning"
+							>
 								Edit
 							</Button>
 						</Card.Body>
