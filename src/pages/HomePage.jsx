@@ -10,6 +10,7 @@ function HomePage({ contacts, deleteContact }) {
 			{contacts.map((item) => {
 				return (
 					<Card key={item.id} style={{ width: "18rem" }}>
+						<Card.Img variant="top" src={item.image} />
 						<Card.Body>
 							<Card.Title>{`${item.name} ${item.surname}`}</Card.Title>
 							<Card.Subtitle className="mb-2 text-muted">
@@ -24,6 +25,13 @@ function HomePage({ contacts, deleteContact }) {
 								variant="warning"
 							>
 								Edit
+							</Button>
+							<Button
+								onClick={() => navigate(`/details/${item.id}`)}
+								className="mx-2"
+								variant="primary"
+							>
+								Details
 							</Button>
 						</Card.Body>
 					</Card>

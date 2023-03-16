@@ -4,6 +4,7 @@ import MainLayout from "../layout/MainLayout";
 import HomePage from "../pages/HomePage";
 import AddProductPage from "../pages/AddProductPage";
 import EditContactPage from "../pages/EditContactPage";
+import ContactDetails from "../pages/ContactDetails";
 
 function MainRoutes({ addContact, contacts, deleteContact, editContact }) {
 	return (
@@ -24,6 +25,10 @@ function MainRoutes({ addContact, contacts, deleteContact, editContact }) {
 					element={
 						<EditContactPage contacts={contacts} editContact={editContact} />
 					}
+				/>
+				<Route
+					path="/details/:id"
+					element={<ContactDetails contacts={contacts} />}
 				/>
 			</Route>
 		</Routes>

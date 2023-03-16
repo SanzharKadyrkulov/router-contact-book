@@ -32,8 +32,9 @@ function EditContactPage({ editContact, contacts }) {
 			name: "",
 			surname: "",
 			phoneNumber: "",
+			image: "",
 		});
-		navigate("/");
+		navigate(-1);
 	}
 
 	return (
@@ -56,6 +57,12 @@ function EditContactPage({ editContact, contacts }) {
 				value={contact.phoneNumber}
 				type="text"
 				name="phoneNumber"
+			/>
+			<input
+				onChange={(e) => handleChange(e)}
+				value={contact.image}
+				type="text"
+				name="image"
 			/>
 			<button>submit</button>
 		</form>

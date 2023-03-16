@@ -5,6 +5,7 @@ function AddProductPage({ addContact }) {
 		name: "",
 		surname: "",
 		phoneNumber: "",
+		image: "",
 	});
 
 	function handleChange(e) {
@@ -33,6 +34,7 @@ function AddProductPage({ addContact }) {
 			name: "",
 			surname: "",
 			phoneNumber: "",
+			image: "",
 		});
 	}
 
@@ -56,6 +58,12 @@ function AddProductPage({ addContact }) {
 				value={contact.phoneNumber}
 				type="text"
 				name="phoneNumber"
+			/>
+			<input
+				onChange={(e) => handleChange(e)}
+				value={contact.image}
+				type="text"
+				name="image"
 			/>
 			<button>submit</button>
 		</form>
